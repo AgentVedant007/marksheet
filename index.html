@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid;
+            border-collapse: collapse;
+        }
+        
+        table {
+            width: 800px;
+            margin: auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let subjects = ["HTML", "CSS", "JAVASCRIPT", "JQUERY", "BOOTSTRAP"];
+        let marksTable = "<table><tr><th>SUBJECTS</th><th>MARKS</th></tr>";
+        let totalMarks = 0;
+        for (let i = 0; i < subjects.length; i++) {
+            let marksInput = prompt("Your Marks in " + subjects[i]);
+            totalMarks += parseInt(marksInput);
+            marksTable += "<tr><td>" + subjects[i] + "</td><td>" + marksInput + "</td></tr>";
+        }
+        marksTable += "<tr><td>Total</td><td>" + totalMarks + "</td></tr> <tr><td>Average</td><td>" + totalMarks / subjects.length + "%</td></tr>";
+        document.write(marksTable);
+    </script>
+</body>
+
+</html>
