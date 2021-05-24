@@ -24,15 +24,19 @@
 
 <body>
     <script>
-        let subjects = ["HTML", "CSS", "JAVASCRIPT", "JQUERY", "BOOTSTRAP"];
+        let subjects = Array;
+        let subjectsNo = parseInt(prompt("How many subjects do you have"));
+        for (let n = 0; n < subjectsNo; n++) {
+            subjects[n] = prompt("Name of Subject " + (n + 1) + ":")
+        }
         let marksTable = "<table><tr><th>SUBJECTS</th><th>MARKS</th></tr>";
         let totalMarks = 0;
-        for (let i = 0; i < subjects.length; i++) {
+        for (let i = 0; i < subjectsNo; i++) {
             let marksInput = prompt("Your Marks in " + subjects[i]);
             totalMarks += parseInt(marksInput);
             marksTable += "<tr><td>" + subjects[i] + "</td><td>" + marksInput + "</td></tr>";
         }
-        marksTable += "<tr><td>Total</td><td>" + totalMarks + "</td></tr> <tr><td>Average</td><td>" + totalMarks / subjects.length + "%</td></tr>";
+        marksTable += "<tr><td>Total</td><td>" + totalMarks + "</td></tr> <tr><td>Average</td><td>" + totalMarks / subjectsNo + "%</td></tr>";
         document.write(marksTable);
     </script>
 </body>
